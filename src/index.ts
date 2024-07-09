@@ -9,8 +9,8 @@ import mongoose from "mongoose";
 // import orderRoute from "./routes/OrderRoute";
 
 
-// mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
-//   .then(() => console.log("Connected to database!"));
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
+  .then(() => console.log("Connected to database!"));
 
 // cloudinary.config({
 //   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
