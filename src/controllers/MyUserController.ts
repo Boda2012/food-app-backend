@@ -34,31 +34,31 @@ const createCurrentUser = async (req: Request, res: Response) => {
   }
 };
 
-// const updateCurrentUser = async (req: Request, res: Response) => {
-//   try {
-//     const { name, addressLine1, country, city } = req.body;
-//     const user = await User.findById(req.userId);
+const updateCurrentUser = async (req: Request, res: Response) => {
+  try {
+    const { name, addressLine1, country, city } = req.body;
+    const user = await User.findById(req.userId);
 
-//     if (!user) {
-//       return res.status(404).json({ message: "User not found" });
-//     }
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
 
-//     user.name = name;
-//     user.addressLine1 = addressLine1;
-//     user.city = city;
-//     user.country = country;
+    user.name = name;
+    user.addressLine1 = addressLine1;
+    user.city = city;
+    user.country = country;
 
-//     await user.save();
+    await user.save();
 
-//     res.send(user);
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).json({ message: "Error updating user" });
-//   }
-// };
+    res.send(user);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Error updating user" });
+  }
+};
 
 export default {
   // getCurrentUser,
   createCurrentUser,
-  // updateCurrentUser,
+  updateCurrentUser,
 };
